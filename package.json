@@ -5,6 +5,7 @@
   "description": "Personalized travel planning platform built with React, Express, and MongoDB",
   "scripts": {
     "install:all": "npm install && npm --prefix client install && npm --prefix server install",
+    "build": "npm --prefix client run build",
     "client:dev": "npm --prefix client run dev",
     "client:build": "npm --prefix client run build",
     "client:lint": "npm --prefix client run lint",
@@ -18,7 +19,7 @@
     "mern",
     "travel-planner",
     "travel-website"
-    ],
+  ],
   "author": "GlobeTrotter Team",
   "license": "MIT",
   "engines": {
