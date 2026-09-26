@@ -11,16 +11,14 @@
     "server:dev": "npm --prefix server run dev",
     "server:start": "npm --prefix server start",
     "server:test": "npm --prefix server test",
+    "test": "npm --prefix server test",
     "seed": "npm --prefix server run seed"
   },
   "keywords": [
     "mern",
     "travel-planner",
-    "react",
-    "express",
-    "mongodb",
-    "node"
-  ],
+    "travel-website"
+    ],
   "author": "GlobeTrotter Team",
   "license": "MIT",
   "engines": {
