@@ -3,7 +3,10 @@
  * Provides Geocoding, Places, and Routing API integration with in-memory caching and error handling.
  */
 
-const API_KEY = import.meta.env.VITE_GEOAPIFY_API_KEY || '0b3e48b72cfa4767a7a4d13d5f96b6bd';
+const API_KEY = import.meta.env.VITE_GEOAPIFY_API_KEY;
+if (!API_KEY) {
+  console.error('Geoapify API key is missing. Set VITE_GEOAPIFY_API_KEY in your environment.');
+}
 const BASE_GEOCODE_URL = 'https://api.geoapify.com/v1/geocode';
 const BASE_PLACES_URL = 'https://api.geoapify.com/v2/places';
 const BASE_ROUTING_URL = 'https://api.geoapify.com/v1/routing';
