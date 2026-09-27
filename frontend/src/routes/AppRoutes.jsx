@@ -2,7 +2,6 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import ProtectedRoute from './ProtectedRoute';
-import AdminRoute from './AdminRoute';
 
 import WelcomeScreenPage from '../pages/public/WelcomeScreenPage';
 import LandingPage from '../pages/public/LandingPage';
@@ -29,7 +28,6 @@ import ActivitySearchPage from '../pages/explore/ActivitySearchPage';
 import BudgetPage from '../pages/budget/BudgetPage';
 import CalendarPage from '../pages/calendar/CalendarPage';
 import ProfileSettingsPage from '../pages/profile/ProfileSettingsPage';
-import AdminDashboardPage from '../pages/admin/AdminDashboardPage';
 
 export default function AppRoutes() {
   return (
@@ -58,11 +56,6 @@ export default function AppRoutes() {
         <Route path="/trips/:id/budget" element={<BudgetPage />} />
         <Route path="/trips/:id/calendar" element={<CalendarPage />} />
         <Route path="/profile" element={<ProfileSettingsPage />} />
-      </Route>
-
-      {/* Protected Admin Routes */}
-      <Route element={<AdminRoute />}>
-        <Route path="/admin" element={<AdminDashboardPage />} />
       </Route>
     </Routes>
   );

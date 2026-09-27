@@ -31,14 +31,15 @@ Odoo x LDCE Hackathon Project
 ## Project layout
 
 ```text
-client/       React application
-server/       Express API and MongoDB models
+admin/        React admin dashboard
+backend/      Express API, MongoDB models, and database schema
+frontend/     React travel-planning application
 docs/         Architecture, API, database, and user-flow documentation
 ```
 
 ## Requirements
 
-- Node.js 18 or newer
+- Node.js 20.19 or newer
 - npm 9 or newer
 - MongoDB (local or hosted)
 
@@ -53,15 +54,16 @@ npm install
 Create environment files from the provided examples:
 
 ```bash
-cp server/.env.example server/.env
-cp client/.env.example client/.env
+cp backend/.env.example backend/.env
+cp frontend/.env.example frontend/.env
 ```
 
-Set a unique `JWT_SECRET` and configure `MONGO_URI` in `server/.env`.
-Set `VITE_API_BASE_URL` in `client/.env` if the API is not running at its
-default URL.
+Set a unique `JWT_SECRET` and configure `MONGO_URI` in `backend/.env`.
+Set `VITE_API_BASE_URL` in `frontend/.env` if the API is not running at its
+default URL. For deployed environments, set `VITE_ADMIN_URL` to the hosted
+admin dashboard URL.
 
-Start the API and client together:
+Start the API, travel frontend, and admin dashboard together:
 
 ```bash
 npm run dev
@@ -71,18 +73,20 @@ Or run them separately:
 
 ```bash
 npm run server:dev
-npm run client:dev
+npm run frontend:dev
+npm run admin:dev
 ```
 
-The client runs at `http://localhost:5173` and the API at
-`http://localhost:5000`. The API health endpoint is
-`http://localhost:5000/health`.
+The travel frontend runs at `http://localhost:5173`, the admin dashboard at
+`http://localhost:5174`, and the API at `http://localhost:5000`. The API health
+endpoint is `http://localhost:5000/health`.
 
 ## Useful commands
 
 ```bash
-npm run client:build
-npm run client:lint
+npm run frontend:build
+npm run frontend:lint
+npm run admin:build
 npm run server:test
 npm run seed
 ```

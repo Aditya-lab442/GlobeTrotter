@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Trip, Stop, Activity, ActivityCategory } from '@/types/trip';
+import { Trip, Stop, Activity, ActivityCategory } from '../types/trip';
 import { Plus, Trash2, GripVertical, Clock, DollarSign, MapPin, Calendar, CheckCircle } from 'lucide-react';
 
 interface ItineraryBuilderProps {

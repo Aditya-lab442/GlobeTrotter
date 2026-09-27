@@ -1,0 +1,71 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  darkMode: 'class',
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        background: "var(--color-background)",
+        surface: "var(--color-surface)",
+        "surface-dim": "var(--color-surface-container-high)",
+        "surface-bright": "var(--color-surface)",
+        "surface-container-lowest": "var(--color-surface)",
+        "surface-container-low": "var(--color-surface-container-low)",
+        "surface-container": "var(--color-surface-container)",
+        "surface-container-high": "var(--color-surface-container-high)",
+        "surface-container-highest": "var(--color-surface-container-high)",
+        "on-surface": "var(--color-on-surface)",
+        "on-surface-variant": "var(--color-on-surface-variant)",
+        "inverse-surface": "var(--color-on-surface)",
+        "inverse-on-surface": "var(--color-surface)",
+        outline: "var(--color-outline)",
+        "outline-variant": "var(--color-outline-variant)",
+        "surface-tint": "#ad3300",
+        primary: "#a93100",
+        "on-primary": "#ffffff",
+        "primary-container": "#d34000",
+        "on-primary-container": "#fffbff",
+        "inverse-primary": "#ffb59e",
+        secondary: "var(--color-secondary)",
+        "on-secondary": "#ffffff",
+        "secondary-container": "var(--color-surface-container-low)",
+        "on-secondary-container": "var(--color-on-surface)",
+        tertiary: "#005da8",
+        "on-tertiary": "#ffffff",
+        "tertiary-container": "#0076d3",
+        "on-tertiary-container": "#fdfcff",
+        error: "#ba1a1a",
+        "on-error": "#ffffff",
+        "error-container": "#ffdad6",
+        "on-error-container": "#93000a",
+      },
+      fontFamily: {
+        serif: ["'Playfair Display'", 'serif'],
+        sans: ["'Inter'", 'sans-serif'],
+      },
+      borderRadius: {
+        sm: "0.125rem",
+        DEFAULT: "0.25rem",
+        md: "0.375rem",
+        lg: "0.5rem",
+        xl: "0.75rem",
+      },
+      boxShadow: {
+        paper: "0px 2px 8px rgba(0, 0, 0, 0.2)",
+      },
+      spacing: {
+        "stack-xl": "80px",
+        "gutter": "24px",
+        "stack-md": "32px",
+        "margin-desktop": "64px",
+        "container-max": "1280px",
+        "unit": "4px",
+        "margin-mobile": "20px"
+      }
+    },
+  },
+  plugins: [],
+}

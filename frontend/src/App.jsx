@@ -23,7 +23,6 @@ import CityDiscoveryPage from './pages/CityDiscoveryPage';
 import ActivityDiscoveryPage from './pages/ActivityDiscoveryPage';
 import PublicTripPage from './pages/PublicTripPage';
 import ProfileSettingsPage from './pages/ProfileSettingsPage';
-import AdminDashboardPage from './pages/AdminDashboardPage';
 
 export default function App() {
   return (
@@ -52,7 +51,6 @@ export default function App() {
                   <Route path="/discover/activities" element={<ActivityDiscoveryPage />} />
                   <Route path="/globe/trip/:shareId" element={<PublicTripPage />} />
                   <Route path="/profile" element={<ProfileSettingsPage />} />
-                  <Route path="/admin" element={<AdminDashboardPage />} />
                 </Routes>
               </main>
               <Footer />

@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { BudgetBreakdown as BudgetBreakdownType, Trip } from '@/types/trip';
+import { BudgetBreakdown as BudgetBreakdownType, Trip } from '../types/trip';
 import { DollarSign, AlertTriangle, TrendingUp, Calendar, PieChart as PieIcon, CheckCircle2 } from 'lucide-react';
 import { PieChart, Pie, Cell, ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip } from 'recharts';
 
