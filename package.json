@@ -4,21 +4,27 @@
   "private": true,
   "description": "Personalized travel planning platform built with React, Express, and MongoDB",
   "workspaces": [
-    "client",
-    "server"
+    "admin",
+    "backend",
+    "frontend"
   ],
   "scripts": {
     "install:all": "npm install",
-    "dev": "concurrently -n client,server -c cyan,magenta \"npm --workspace client run dev\" \"npm --workspace server run dev\"",
-    "build": "npm --workspace client run build",
-    "client:dev": "npm --workspace client run dev",
-    "client:build": "npm --workspace client run build",
-    "client:lint": "npm --workspace client run lint",
-    "server:dev": "npm --workspace server run dev",
-    "server:start": "npm --workspace server run start",
-    "server:test": "npm --workspace server run test",
-    "test": "npm --workspace server run test",
-    "seed": "npm --workspace server run seed"
+    "dev": "concurrently -n frontend,admin,backend -c cyan,green,magenta \"npm --workspace frontend run dev\" \"npm --workspace admin run dev\" \"npm --workspace backend run dev\"",
+    "build": "npm --workspace frontend run build && npm --workspace admin run build",
+    "frontend:dev": "npm --workspace frontend run dev",
+    "frontend:build": "npm --workspace frontend run build",
+    "frontend:lint": "npm --workspace frontend run lint",
+    "admin:dev": "npm --workspace admin run dev",
+    "admin:build": "npm --workspace admin run build",
+    "server:dev": "npm --workspace backend run dev",
+    "server:start": "npm --workspace backend run start",
+    "server:test": "npm --workspace backend run test",
+    "test": "npm --workspace backend run test",
+    "seed": "npm --workspace backend run seed",
+    "client:dev": "npm run frontend:dev",
+    "client:build": "npm run frontend:build",
+    "client:lint": "npm run frontend:lint"
   },
   "keywords": [
     "mern",
@@ -28,7 +34,7 @@
   "author": "GlobeTrotter Team",
   "license": "MIT",
   "engines": {
-    "node": ">=18.0.0",
+    "node": ">=20.19.0",
     "npm": ">=9.0.0"
   },
   "devDependencies": {

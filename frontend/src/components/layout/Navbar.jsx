@@ -12,6 +12,7 @@ export default function Navbar() {
   const { location: userLoc } = useUserLocation();
   const location = useLocation();
   const navigate = useNavigate();
+  const adminDashboardUrl = import.meta.env.VITE_ADMIN_URL || 'http://localhost:5174';
   const [isAiModalOpen, setIsAiModalOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -72,13 +73,15 @@ export default function Navbar() {
               </Link>
 
               {user?.role === 'admin' && (
-                <Link 
-                  to="/admin" 
-                  className={`flex items-center space-x-1 transition hover:text-primary ${isActive('/admin') ? 'text-primary font-semibold border-b-2 border-primary pb-1' : 'text-on-surface/80'}`}
+                <a
+                  href={adminDashboardUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center space-x-1 transition hover:text-primary text-on-surface/80"
                 >
                   <ShieldCheck className="w-4 h-4 text-tertiary" />
                   <span>Admin</span>
-                </Link>
+                </a>
               )}
             </nav>
           )}
@@ -200,6 +203,17 @@ export default function Navbar() {
                 <Link to="/discover/destinations" onClick={() => setIsMobileMenuOpen(false)} className="block text-sm font-medium text-on-surface hover:text-primary">Destinations</Link>
                 <Link to="/discover/activities" onClick={() => setIsMobileMenuOpen(false)} className="block text-sm font-medium text-on-surface hover:text-primary">Activities</Link>
                 <Link to="/trips/trip-india-1/calendar" onClick={() => setIsMobileMenuOpen(false)} className="block text-sm font-medium text-on-surface hover:text-primary">Calendar</Link>
+                {user?.role === 'admin' && (
+                  <a
+                    href={adminDashboardUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="block text-sm font-medium text-on-surface hover:text-primary"
+                  >
+                    Admin Dashboard
+                  </a>
+                )}
                 <Link to="/profile" onClick={() => setIsMobileMenuOpen(false)} className="block text-sm font-medium text-on-surface hover:text-primary">Profile & Settings</Link>
                 
                 <div className="pt-3 border-t border-outline-variant/60 flex flex-col space-y-2">

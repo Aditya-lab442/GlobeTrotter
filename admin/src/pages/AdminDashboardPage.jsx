@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
-import { useTrip } from '../context/TripContext';
 import { MOCK_CITIES } from '../data/mockData';
 
 export default function AdminDashboardPage() {
-  const { trips } = useTrip();
   const [filterPeriod, setFilterPeriod] = useState('Last 30 days');
 
   const mockUsers = [
-    { id: 'usr-1', name: 'Prashant Sharma', email: 'prashant@example.com', role: 'admin', joined: '2026-01-15', tripsCount: trips.length },
+    { id: 'usr-1', name: 'Prashant Sharma', email: 'prashant@example.com', role: 'admin', joined: '2026-01-15', tripsCount: 0 },
     { id: 'usr-2', name: 'Elena Rostova', email: 'elena@travel.org', role: 'user', joined: '2026-02-04', tripsCount: 3 },
     { id: 'usr-3', name: 'Marcus Vance', email: 'marcus@horizon.io', role: 'user', joined: '2026-02-18', tripsCount: 2 },
     { id: 'usr-4', name: 'Sophia Chen', email: 'sophia@destinations.com', role: 'user', joined: '2026-03-01', tripsCount: 5 }
@@ -53,7 +51,7 @@ export default function AdminDashboardPage() {
           <div className="bg-surface border border-outline-variant p-6 rounded-sm shadow-paper space-y-2">
             <span className="text-[11px] font-semibold uppercase tracking-wider text-secondary">Total Trips Created</span>
             <div className="flex justify-between items-baseline">
-              <span className="font-serif text-3xl font-bold text-on-surface">{trips.length + 14}</span>
+              <span className="font-serif text-3xl font-bold text-on-surface">14</span>
               <span className="material-symbols-outlined text-primary text-2xl">explore</span>
             </div>
             <span className="text-[10px] text-primary font-mono">+12.5% vs last month</span>
