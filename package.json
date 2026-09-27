@@ -3,17 +3,22 @@
   "version": "1.0.0",
   "private": true,
   "description": "Personalized travel planning platform built with React, Express, and MongoDB",
+  "workspaces": [
+    "client",
+    "server"
+  ],
   "scripts": {
-    "install:all": "npm install && npm --prefix client install && npm --prefix server install",
-    "build": "npm --prefix client run build",
-    "client:dev": "npm --prefix client run dev",
-    "client:build": "npm --prefix client run build",
-    "client:lint": "npm --prefix client run lint",
-    "server:dev": "npm --prefix server run dev",
-    "server:start": "npm --prefix server start",
-    "server:test": "npm --prefix server test",
-    "test": "npm --prefix server test",
-    "seed": "npm --prefix server run seed"
+    "install:all": "npm install",
+    "dev": "concurrently -n client,server -c cyan,magenta \"npm --workspace client run dev\" \"npm --workspace server run dev\"",
+    "build": "npm --workspace client run build",
+    "client:dev": "npm --workspace client run dev",
+    "client:build": "npm --workspace client run build",
+    "client:lint": "npm --workspace client run lint",
+    "server:dev": "npm --workspace server run dev",
+    "server:start": "npm --workspace server run start",
+    "server:test": "npm --workspace server run test",
+    "test": "npm --workspace server run test",
+    "seed": "npm --workspace server run seed"
   },
   "keywords": [
     "mern",
@@ -25,5 +30,8 @@
   "engines": {
     "node": ">=18.0.0",
     "npm": ">=9.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
   }
 }

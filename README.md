@@ -47,7 +47,7 @@ docs/         Architecture, API, database, and user-flow documentation
 Install all workspace dependencies:
 
 ```bash
-npm run install:all
+npm install
 ```
 
 Create environment files from the provided examples:
@@ -61,7 +61,13 @@ Set a unique `JWT_SECRET` and configure `MONGO_URI` in `server/.env`.
 Set `VITE_API_BASE_URL` in `client/.env` if the API is not running at its
 default URL.
 
-Start the API and client in separate terminals:
+Start the API and client together:
+
+```bash
+npm run dev
+```
+
+Or run them separately:
 
 ```bash
 npm run server:dev
